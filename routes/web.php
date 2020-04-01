@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'LoginController@form');
+
+Route::post('/login', 'LoginController@Login');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/logout', function () {
+        Auth::logout();
+        return redirect()->action('LoginController@form');
+    })->name('logout');
 });
