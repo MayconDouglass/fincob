@@ -24,12 +24,14 @@ class ContaController extends Controller
 
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $conta = Conta::first();
+        //dd($conta);
         $contas = Auth::user()->contas;
         $categorias = Categoria::orderby('nome')->get();
         $pastas = Pasta::orderby('nome')->get();
-        return view('painel.conta-add', compact('contas','categorias','pastas'));
+        return view('painel.conta-add', compact('contas','conta','categorias','pastas'));
     }
       
 

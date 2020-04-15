@@ -337,7 +337,7 @@
 
 <!-- Modal Cadastro-->
 <div class="modal fade" id="CadastroModal" tabindex="-1" role="dialog" aria-labelledby="CadastroModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="b_add_modalHeader">
                 <div class="modal-header">
@@ -352,94 +352,83 @@
                 <!-- Form de cadastro -->
                 <form class="form-horizontal" method="POST" action="{{action('ContaController@store')}}">
                     @csrf
-
                     <div class="form-group row">
-                        <label class="control-label col-md-3">Tipo</label>
-                        <div class="col-md-8">
-                            <select class="form-control" name="tipo">
-                                <option value="D">Despesa</option>
-                                <option value="R">Receita</option>
-                                <option value="T">Transferência</option>
-                            </select>
+
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Tipo</label>
+                        <select class="form-control" name="tipo">
+                            <option value="D">Despesa</option>
+                            <option value="R">Receita</option>
+                            <option value="T">Transferência</option>
+                        </select>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Categoria</label>
-                        <div class="col-md-8">
-                            <select class="form-control" name="categoria">
-                                @foreach ($categorias as $categoria)
-                                <option value={{$categoria->id}}>{{$categoria->nome}}</option>
-                                @endforeach
-                            </select>
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Categoria</label>
+                        <select class="form-control" name="categoria">
+                            @foreach ($categorias as $categoria)
+                            <option value={{$categoria->id}}>{{$categoria->nome}}</option>
+                            @endforeach
+                        </select>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Pasta</label>
-                        <div class="col-md-8">
-
-                            <select class="form-control" name="pasta">
-                                @foreach ($pastas as $pasta)
-                                <option value={{$pasta->id}}>{{$pasta->nome}}</option>
-                                @endforeach
-                            </select>
+                        
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Pasta</label>
+                        <select class="form-control" name="pasta">
+                            @foreach ($pastas as $pasta)
+                            <option value={{$pasta->id}}>{{$pasta->nome}}</option>
+                            @endforeach
+                        </select>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Titulo</label>
-                        <div class="col-md-8">
-                            <input class="form-control" type="text" name="titulo" placeholder="Descreva a conta.." required>
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Efetivado</label>
+                        <p><select class="form-control" name="efetivado">
+                           <option value='0'>Não</option>
+                           <option value='1'>Sim</option>
+                        </select></p>
                         </div>
-                    </div>
+                        
+                        <!-- Segunda Linha -->
+                        <div class="col-sm-6">
+                        <label for="recipient-name" class="control-label">Titulo</label>
+                        <input class="form-control" type="text" name="titulo" placeholder="Descreva a conta.." required>
+                        </div>
 
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Valor</label>
-                        <div class="col-md-8">
-                            <input class="form-control" type="number" name="valor" placeholder="0,00" step="0.01" required>
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Valor</label>
+                        <input class="form-control" type="number" name="valor" placeholder="0,00" step="0.01" required>
                         </div>
-                    </div>
-                    
 
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Efetivado</label>
-                        <div class="col-md-8">
-                            <div class="custom-control custom-radio">
-                                <input class="custom-control-input" type="radio" id="efetivado1" value="1" name="efetivado">
-                                <label for="efetivado1" class="custom-control-label"> Sim</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input class="custom-control-input" checked type="radio" id="efetivado2" value="0" name="efetivado">
-                                <label for="efetivado2" class="custom-control-label"> Não</label>
-                            </div>
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Parcelas</label>
+                       <p><select class="form-control" name="parcela">
+                            @foreach (range(1,48) as $parcela)
+                            <option value="{{$parcela}}">{{$parcela}}</option>
+                            @endforeach
+                        </select></p>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Parcelas</label>
-                        <div class="col-md-8">
-                            <select class="form-control" name="parcela">
-                                @foreach (range(1,48) as $parcela)
-                                <option value="{{$parcela}}">{{$parcela}}</option>
-                                @endforeach
-                            </select>
+                        
+                        <!-- Terceira Linha -->
+                        
+                        <div class="col-sm-4">
+                        <label for="recipient-name" class="control-label">Vencimento</label>
+                        <input class="form-control" type="date" name="venc" placeholder="Selecione a Data">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Vencimento</label>
-                        <div class="col-md-8">
-                            <input class="form-control" type="date" name="venc" placeholder="Select Date">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Intervalo ( em dias entre vencimentos)</label>
-                        <div class="col-md-8"> 
+                        
+                        <div class="col-sm-4">
+                            <label for="recipient-name" class="control-label">Intervalo ( em dias entre vencimentos)</label>
                             <input class="form-control" type="text" name="intervalo">
                             <label class="control-label">**Se estiver em branco será considerado 30 dias (corridos)**</label>
                         </div>
+                        
+                        <div class="col-sm-4">
+                        <label for="recipient-name" class="control-label">Dia do Cadastro</label>
+                        <input class="form-control" type="text" name="dataAtual" placeholder="<?php echo(date('d/m/Y')); ?>" disabled>
+                        </div>
+                        
                     </div>
+                    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"> Cancelar</i></button>
