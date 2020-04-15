@@ -61,9 +61,9 @@ class Conta extends Eloquent
 
 	public function categorias()
 	{
-		return $this->belongsToMany(\App\Models\Categoria::class, 'categoria_fk');
+		return $this->belongsToMany(\App\Models\Categoria::class,'categorias' ,'id');
 	}
-	public function pasta()
+	public function pastas()
 	{
 		return $this->belongsToMany(\App\Models\Pasta::class, 'pasta_fk');
 	}

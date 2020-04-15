@@ -205,7 +205,7 @@
                         <label for="recipient-name" class="control-label">Categoria</label>
                         <select class="form-control" name="categoria" disabled>
                             @foreach ($categorias as $categoria)
-                            <option value={{$categoria->id}} @if ($conta->categoria_fk == $categoria->id)
+                            <option value={{$categoria->id}} @if (!empty($conta)&&($conta->categoria_fk == $categoria->id))
                                 selected @endif>{{$categoria->nome}}</option>
                             @endforeach
                         </select>
@@ -215,7 +215,7 @@
                         <label for="recipient-name" class="control-label">Pasta</label>
                         <select class="form-control" name="pasta" disabled>
                             @foreach ($pastas as $pasta)
-                            <option value={{$pasta->id}} @if ($conta->pasta_fk == $pasta->id)
+                            <option value={{$pasta->id}} @if (!empty($conta)&&($conta->pasta_fk == $pasta->id))
                                 selected @endif>{{$pasta->nome}}</option>
                             @endforeach
                         </select>
