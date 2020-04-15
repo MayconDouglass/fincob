@@ -15,10 +15,17 @@ class CreateContasTable extends Migration {
 		Schema::create('contas', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->char('tipo', 1)->nullable();
-			$table->string('titulo', 100)->nullable();
-			$table->float('valor', 10, 0)->nullable();
+			$table->char('tipo', 1)->comment('D = Despesas
+R = Receitas T=Transferencias');
+			$table->string('titulo', 100);
+			$table->float('valor', 10, 0);
 			$table->boolean('efetivado')->nullable();
+			$table->integer('parcela')->nullable();
+			$table->dateTime('data_conta')->nullable();
+			$table->dateTime('data_efetivacao')->nullable();
+			$table->dateTime('vencimento')->nullable();
+			$table->integer('categoria_fk')->index('categorias');
+			$table->integer('pasta_fk')->index('pastas');
 		});
 	}
 

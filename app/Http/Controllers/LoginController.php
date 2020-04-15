@@ -30,13 +30,15 @@ class LoginController extends Controller
 
         $lembrar = empty($request->remember) ? false : true;
 
-        $usuario = User::where('email', $request->login)->first();
-        
+        $usuario = User::where('email', $request->login)->where('ativo',1)->first();
+        //dd(bcrypt($request->senha));
 
         if ($usuario && Hash::check($request->senha, $usuario->password)) {
+            
             Auth::loginUsingId($usuario->id, $lembrar);
         }
 
         return redirect()->action('LoginController@form');
     }
+
 }

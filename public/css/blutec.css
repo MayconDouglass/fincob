@@ -1,0 +1,363 @@
+/* CSS do MODAL */
+
+.b_modalHeader {
+    background-color: #009688;
+    color: #fff;
+}
+
+.b_view_modalHeader {
+    background-color: #5a0096;
+    color: #fff;
+}
+.b_edit_modalHeader {
+    background-color: #b99803;
+    /*background-color: #009650;*/
+    color: #fff;
+}
+.b_delete_modalHeader {
+    background-color:crimson;
+    
+    color: #fff;
+}
+.b_add_modalHeader {
+   
+    background-color: #009650;
+    color: #fff;
+}
+
+.b_text_modal_danger{
+  color: crimson;
+  font-weight: bold;
+  text-justify: auto;
+}
+
+.b_text_modal_title_danger{
+  color: #fff;
+}
+
+.b_modal-open {
+    overflow: hidden;
+  }
+  
+  .b_modal-open .b_modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .b_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+  }
+  
+  .b_modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0.5rem;
+    pointer-events: none;
+  }
+  
+  .b_modal.fade .b_modal-dialog {
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    -webkit-transform: translate(0, -50px);
+        -ms-transform: translate(0, -50px);
+            transform: translate(0, -50px);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .b_modal.fade .b_modal-dialog {
+      -webkit-transition: none;
+      -o-transition: none;
+      transition: none;
+    }
+  }
+  
+  .b_modal.show .b_modal-dialog {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+  
+  .b_modal-dialog-scrollable {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-height: calc(100% - 1rem);
+  }
+  
+  .b_modal-dialog-scrollable .b_modal-content {
+    max-height: calc(100vh - 1rem);
+    overflow: hidden;
+  }
+  
+  .b_modal-dialog-scrollable .b_modal-header,
+  .b_modal-dialog-scrollable .b_modal-footer {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  
+  .b_modal-dialog-scrollable .b_modal-body {
+    overflow-y: auto;
+  }
+  
+  .b_modal-dialog-centered {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: calc(100% - 1rem);
+  }
+  
+  .b_modal-dialog-centered::before {
+    display: block;
+    height: calc(100vh - 1rem);
+    content: "";
+  }
+  
+  .b_modal-dialog-centered.b_modal-dialog-scrollable {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+  }
+  
+  .b_modal-dialog-centered.b_modal-dialog-scrollable .b_modal-content {
+    max-height: none;
+  }
+  
+  .b_modal-dialog-centered.b_modal-dialog-scrollable::before {
+    content: none;
+  }
+  
+  .b_modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #FFF;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+  }
+  
+  .b_modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+  }
+  
+  .b_modal-backdrop.fade {
+    opacity: 0;
+  }
+  
+  .b_modal-backdrop.show {
+    opacity: 0.5;
+  }
+  
+  .b_modal-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+  }
+  
+  .b_modal-header .b_close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem auto;
+  }
+  
+  .b_modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  
+  .b_modal-body {
+    position: relative;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    padding: 1rem;
+  }
+  
+  .b_modal-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+  }
+  
+  .b_modal-footer > :not(:first-child) {
+    margin-left: .25rem;
+  }
+  
+  .b_modal-footer > :not(:last-child) {
+    margin-right: .25rem;
+  }
+  
+  .b_modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+  }
+  
+  @media (min-width: 576px) {
+    .b_modal-dialog {
+      max-width: 500px;
+      margin: 1.75rem auto;
+    }
+    .b_modal-dialog-scrollable {
+      max-height: calc(100% - 3.5rem);
+    }
+    .b_modal-dialog-scrollable .b_modal-content {
+      max-height: calc(100vh - 3.5rem);
+    }
+    .b_modal-dialog-centered {
+      min-height: calc(100% - 3.5rem);
+    }
+    .b_modal-dialog-centered::before {
+      height: calc(100vh - 3.5rem);
+    }
+    .b_modal-sm {
+      max-width: 300px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .b_modal-lg,
+    .b_modal-xl {
+      max-width: 800px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .b_modal-xl {
+      max-width: 1140px;
+    }
+  }
+
+/* CSS Buttons */
+
+.btn-alterar {
+    color: #fff;
+    background-color: rgb(15, 148, 172);
+    border-color: rgb(15, 148, 172);
+}
+
+.btn-alterar:hover {
+    color: #fff;
+    background-color: rgb(24, 161, 185);
+    border-color: rgb(24, 161, 185);
+}
+
+.btn-alterar:focus,
+.btn-alterar.focus {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 110, 255, 0.5);
+    box-shadow: 0 0 0 0 rgba(0, 110, 255, 0.5);
+}
+
+.btn-alterar.disabled,
+.btn-alterar:disabled {
+    color: #212529;
+    background-color: rgb(24, 161, 185);
+    border-color: rgb(24, 161, 185);
+}
+
+.btn-delete {
+    color: #FFF;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-delete:hover {
+    color: #FFF;
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-delete:focus,
+.btn-delete.focus {
+    -webkit-box-shadow: 0 0 0 0 rgba(225, 83, 97, 0.5);
+    box-shadow: 0 0 0 0 rgba(225, 83, 97, 0.5);
+}
+
+.btn-delete.disabled,
+.btn-delete:disabled {
+    color: #FFF;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+
+/* CSS Datatable */
+.actionDataTabUser {
+    width: 255px;
+}
+.statusDataTabUser {
+    width: 66px;
+}
+.idDataTabUser {
+    width: 66px;
+}
+.actionDataTabConta {
+    width: 255px;
+}
+.statusDataTabConta {
+    width: 66px;
+}
+.idDataTabConta {
+    width: 66px;
+}
+.labelCampos {
+    text-align: left;
+}
+.textFinanceiro {
+  color: #dc3545;
+}
+
