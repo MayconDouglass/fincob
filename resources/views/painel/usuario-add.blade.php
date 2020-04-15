@@ -115,7 +115,7 @@
 
 <!-- Modal de Visualizar -->
 <div class="modal fade" id="VisualizarCadModal" tabindex="-1" role="dialog" aria-labelledby="VisualizarCadModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="b_view_modalHeader">
                 <div class="modal-header">
@@ -130,29 +130,22 @@
                     @csrf
             
                     <div class="form-group row">
-            
-                        <label for="recipient-name" class="col-form-label col-md-3">ID</label>
-            
-                        <div class="col-md-8">
-                            <input type="text" class="form-control col-form-label-sm" id="id_user" disabled="">
-                        </div>
-                    </div>
-            
-                    <div class="form-group row">
-            
-                        <label for="recipient-name" class="col-form-label col-md-3 ">Email</label>
-            
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="email_user" disabled="">
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label for="recipient-name" class="control-label col-md-3">Status</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="status_user" disabled=""> 
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">ID</label>
+                        <input type="text" class="form-control" id="id_user" disabled=""> 
                         </div>
+
+                        <div class="col-sm-6">
+                        <label for="recipient-name" class="control-label">Email</label>
+                        <input type="text" class="form-control" id="email_user" disabled=""> 
+                        </div>
+                        
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Status</label>
+                        <input type="text" class="form-control" id="status_user" disabled=""> 
+                        </div>
+                        
                     </div>
 
                     <div class="modal-footer">

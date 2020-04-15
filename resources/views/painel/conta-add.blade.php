@@ -178,7 +178,7 @@
 
 <!-- Modal de Visualizar -->
 <div class="modal fade" id="VisualizarCadContaModal" tabindex="-1" role="dialog" aria-labelledby="VisualizarCadContaModalLabel" aria-hidden="true">
-    <div class="modal-dialog " role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="b_view_modalHeader">
                 <div class="modal-header">
@@ -192,110 +192,73 @@
                 <form class="form-vertical">
                     @csrf
 
+                    
+
                     <div class="form-group row">
 
-                        <label for="recipient-name" class="col-form-label col-md-3">ID</label>
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">ID</label>
+                        <input type="text" class="form-control" id="id_conta" disabled=""> 
+                        </div>
 
-                        <div class="col-md-8">
-                            <input type="text" class="form-control col-form-label-sm" id="id_conta" disabled="">
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Categoria</label>
+                        <select class="form-control" name="categoria" disabled>
+                            @foreach ($categorias as $categoria)
+                            <option value={{$categoria->id}} @if ($conta->categoria_fk == $categoria->id)
+                                selected @endif>{{$categoria->nome}}</option>
+                            @endforeach
+                        </select>
                         </div>
                         
-                    </div>
-                     
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Categoria</label>
-                        <div class="col-md-8">
-                            <select class="form-control" name="categoria" disabled>
-                                @foreach ($categorias as $categoria)
-                                <option value={{$categoria->id}} @if ($conta->categoria_fk == $categoria->id)
-                                    selected @endif>{{$categoria->nome}}</option>
-                                @endforeach
-                            </select>
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Pasta</label>
+                        <select class="form-control" name="pasta" disabled>
+                            @foreach ($pastas as $pasta)
+                            <option value={{$pasta->id}} @if ($conta->pasta_fk == $pasta->id)
+                                selected @endif>{{$pasta->nome}}</option>
+                            @endforeach
+                        </select>
                         </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="control-label col-md-3">Pasta</label>
-                        <div class="col-md-8">
-
-                            <select class="form-control" name="pasta" disabled>
-                                @foreach ($pastas as $pasta)
-                                <option value={{$pasta->id}} @if ($conta->pasta_fk == $pasta->id)
-                                    selected @endif>{{$pasta->nome}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                     
-                     
-                    <div class="form-group row">
-
-                        <label for="recipient-name" class="col-form-label col-md-3">Descrição</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="titulo_conta" disabled="">
+                        
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Situação</label>
+                        <p><input type="text" class="form-control" id="efetivado_conta" disabled=""> </p>
                         </div>
 
-                    </div>
-
-                    <div class="form-group row">
-
-                        <label for="recipient-name" class="col-form-label col-md-3">Tipo</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="tipo_conta" disabled="">
+                        <!-- Segunda Linha -->
+                        <div class="col-sm-6">
+                        <label for="recipient-name" class="control-label">Descrição</label>
+                        <input type="text" class="form-control" id="titulo_conta" disabled=""> 
+                        </div>
+                        
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Tipo</label>
+                        <input type="text" class="form-control" id="tipo_conta" disabled=""> 
+                        </div>
+                        
+                        
+                        <div class="col-sm-3">
+                        <label for="recipient-name" class="control-label">Valor</label>
+                        <p><input type="text" class="form-control" id="valor_conta" disabled=""> </p>
+                        </div>
+                        
+                        <!-- Terceira Linha -->
+                        <div class="col-sm-4">
+                        <label for="recipient-name" class="control-label">Data Venc.</label>
+                        <input type="text" class="form-control" id="vencimento_conta" disabled="">
                         </div>
 
-                    </div>
-                    
-                    <div class="form-group row">
-
-                        <label for="recipient-name" class="col-form-label col-md-3">Situação</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="efetivado_conta" disabled="">
+                        <div class="col-sm-4">
+                        <label for="recipient-name" class="control-label">Data Pag.</label>
+                        <input type="text" class="form-control" id="dataefe_conta" disabled="">
                         </div>
 
-                    </div>
-                    
-                    <div class="form-group row">
-
-                        <label for="recipient-name" class="col-form-label col-md-3">Valor</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="valor_conta" disabled="">
+                        <div class="col-sm-4">
+                        <label for="recipient-name" class="control-label">Data Cadastro</label>
+                        <input type="text" class="form-control" id="data_conta" disabled="">
                         </div>
-
-                    </div>
-
-                   <div class="form-group row">
-
-                        <label for="recipient-name" class="col-form-label col-md-3">Data Venc.</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="vencimento_conta" disabled="">
-                        </div>
-
-                    </div>
-
-                    <div class="form-group row">
-
-                        <label for="recipient-name" class="col-form-label col-md-3">Data Pag.</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="dataefe_conta" disabled="">
-                        </div>
-
-                    </div>
-
-                    <div class="form-group row">
-
-                        <label for="recipient-name" class="col-form-label col-md-3">Data Cadastro</label>
-
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" id="data_conta" disabled="">
-                        </div>
-
+                        
                     </div>
 
                     <div class="modal-footer">
